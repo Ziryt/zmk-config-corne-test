@@ -6,8 +6,8 @@ if SHIELD_TAIRA_LEFT
 config ZMK_KEYBOARD_NAME
 	default "Taira"
 
-config ZMK_SPLIT_BLE_ROLE_CENTRAL
-	default y
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
 
 endif
 
@@ -16,9 +16,6 @@ if SHIELD_TAIRA_LEFT || SHIELD_TAIRA_RIGHT
 config ZMK_SPLIT
 	default y
 
-endif
-
-# ZMK_DISPLAY
 if ZMK_DISPLAY
 
 config I2C
@@ -27,9 +24,8 @@ config I2C
 config SSD1306
     default y
 
-endif
+endif # ZMK_DISPLAY
 
-# LVGL
 if LVGL
 
 config LV_Z_VDB_SIZE
@@ -44,5 +40,7 @@ config LV_Z_BITS_PER_PIXEL
 choice LV_COLOR_DEPTH
     default LV_COLOR_DEPTH_1
 endchoice
+
+endif # LVGL
 
 endif
